@@ -1,0 +1,39 @@
+Name: Translations
+Type: TranslationsCategoryFolder
+Children:
+- Name: LocalizationDictionary1
+  Type: LocalizationDictionary
+  DataType: String
+  ValueRank: OneOrMoreDimensions
+  ArrayDimensions: [0,0]
+  Value: 
+   {
+    "Type": 12,
+    "Dimensions": [24,2],
+    "Body": [
+     "","en-US",
+     "AssistancePanelTitle","Assistance",
+     "FTRemoteAccessConnection","FT Remote Access connection",
+     "RegisterToDomainString","To connect, add your device in FT Remote Access.",
+     "Connecting"," Connecting",
+     "Name","Name",
+     "RegisterToDomainPassword","Password:",
+     "RequestsUnavailable","Assistance requests are unavailable for this device while disconnected.",
+     "Disconnected","Disconnected ",
+     "Description","Description",
+     "Yes","Yes",
+     "ContactInformation","Contact information",
+     "No","No",
+     "RequestAssistance","Request Assistance ",
+     "AssistanceRequested"," Assistance Requested",
+     "FillOutFieldsMessage","Fill out all fields to submit a request.",
+     "RequestsDisabled","Assistance requests are disabled for this device. Please contact your system administrator.",
+     "ConnectionPanelTitleAsterisk","Connection *",
+     "ConnectionPanelTitle","Connection",
+     "FTRemoteAccessRuntimeVersion","FT Remote Access runtime version",
+     "RemoteConnections","Remote connections",
+     "Connected"," Connected",
+     "AllowUserToConnect","Allow user \"{0}\" from IP address {1} to connect?",
+     "RegisterToDomainDeviceID","Device ID:"
+    ]
+   }

@@ -1,0 +1,46 @@
+Name: Stations
+Type: FolderType
+Children:
+- Name: Station1
+  Type: Station
+  Children:
+  - Name: Number
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: ID
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: WorkbarNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: DripTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 10
+  - Name: PendulumTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Locked
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: Characteristic
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: WorkbarData
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Rack"

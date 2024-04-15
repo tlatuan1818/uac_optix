@@ -1,0 +1,12 @@
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\bin\UAC.deps.json
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\bin\UAC.dll
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\bin\UAC.pdb
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.csproj.AssemblyReference.cache
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.GeneratedMSBuildEditorConfig.editorconfig
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.AssemblyInfoInputs.cache
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.AssemblyInfo.cs
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.csproj.CoreCompileInputs.cache
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.dll
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\refint\UAC.dll
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\UAC.pdb
+D:\UAC 1\UAC\UAC\ProjectFiles\NetSolution\obj\Debug\ref\UAC.dll

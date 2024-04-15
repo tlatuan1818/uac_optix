@@ -1,0 +1,459 @@
+Name: Model
+Type: ModelCategoryFolder
+Children:
+- Name: Station
+  Id: g=f913487af487cf6e935d5eac068be0cb
+  Supertype: BaseObjectType
+  Children:
+  - Name: Number
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: ID
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: WorkbarNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: DripTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: PendulumTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Locked
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: Characteristic
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: WorkbarData
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+- Name: Hoist
+  Id: g=287210e6d1c3e51bef1009b492a9297e
+  Supertype: BaseObjectType
+  Children:
+  - Name: Start
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Dest
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: LiftLevelStatus
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: LiftLevelDesired
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Mode
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Increment
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Desired
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Reserved
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Priority
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TravelStatus
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: TravelInterlock
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: ActualPosition
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: LiftStatus
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: LiftInterlock
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TravelInterlockDescription
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: LiftInterlockDescription
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: TravelStatusPLC
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+- Name: Workbar
+  Id: g=9db25e310e87da8644fdd50f6d27c270
+  Supertype: BaseObjectType
+  Children:
+  - Name: ID
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: State
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Release
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Time
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: StateDescription
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+    Children:
+    - Name: KeyValueConverter1
+      Type: ValueMapConverter
+      Children:
+      - Name: Source
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../State"
+      - Name: Pairs
+        Type: BaseObjectType
+        ModellingRule: None
+        Children:
+        - Name: Pair
+          Type: ValueMapPair
+          ModellingRule: None
+          Children:
+          - Name: Key
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ModellingRule: None
+            Value: 0
+          - Name: Value
+            Type: BaseDataVariableType
+            DataType: String
+            ModellingRule: None
+            Value: "Empty work bar"
+        - Name: Pair1
+          Type: ValueMapPair
+          ModellingRule: None
+          Children:
+          - Name: Key
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ModellingRule: None
+            Value: 1
+          - Name: Value
+            Type: BaseDataVariableType
+            DataType: String
+            ModellingRule: None
+            Value: "Raw material"
+        - Name: Pair2
+          Type: ValueMapPair
+          ModellingRule: None
+          Children:
+          - Name: Key
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ModellingRule: None
+            Value: 2
+          - Name: Value
+            Type: BaseDataVariableType
+            DataType: String
+            ModellingRule: None
+            Value: "In Treatment"
+        - Name: Pair3
+          Type: ValueMapPair
+          ModellingRule: None
+          Children:
+          - Name: Key
+            Type: BaseDataVariableType
+            DataType: UInt32
+            ModellingRule: None
+            Value: 3
+          - Name: Value
+            Type: BaseDataVariableType
+            DataType: String
+            ModellingRule: None
+            Value: "Finished Material"
+- Name: Device
+  Id: g=bbb324c1c6bdad4a2389feb8764cfd1a
+  Supertype: BaseObjectType
+  Children:
+  - Name: Select
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Status
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Fault
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Base
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimeOn
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimerOff
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Symbol
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: DeviceGroup
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+- File: devies/devies.yaml
+- Name: Station1
+  Type: Station
+  Children:
+  - Name: Number
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: ID
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 120
+  - Name: WorkbarNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: DripTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: PendulumTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Locked
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: Characteristic
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: CoverOpen
+    Type: Device
+    Children:
+    - Name: Select
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Status
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Fault
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Base
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: TimeOn
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: TimerOff
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Symbol
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: DeviceGroup
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: StationName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: Name
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: StationNo
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Position
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+  - Name: CoverClose
+    Type: Device
+    Children:
+    - Name: Select
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Status
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Fault
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Base
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: TimeOn
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: TimerOff
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Symbol
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: DeviceGroup
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: StationName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: Name
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0"
+    - Name: StationNo
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+    - Name: Position
+      Type: BaseDataVariableType
+      DataType: Int32
+      Value: 0
+  - Name: WorkbarData
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+- Name: QVDataGridColumn
+  Id: g=1117a9f6dea8ce6022a29cb3f1413b01
+  Supertype: BaseObjectType
+  Children:
+  - Name: Title
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Property
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Width
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TItem
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: NodeClass
+      Type: PropertyType
+      DataType: NodePointerNodeClass
+      ModellingRule: Optional
+      Value: 1
+  - Name: CellType
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Objects/UAC/UI/Widgets/TbCellItem"
+    - Name: NodeClass
+      Type: PropertyType
+      DataType: NodePointerNodeClass
+      ModellingRule: Optional
+      Value: 1
+- File: Stations/Stations.yaml
