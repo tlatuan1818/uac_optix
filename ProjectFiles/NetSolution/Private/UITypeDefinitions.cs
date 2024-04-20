@@ -5,8 +5,13 @@ using UAManagedCore;
 // WARNING: AUTO-GENERATED CODE, DO NOT EDIT!
 //-------------------------------------------
 
-[MapType(NamespaceUri = "UAC", Guid = "54e4e9cb4ac3e407f660c887c69b4b13")]
-public class QVDataGridTimes : QVDataGrid
+[MapType(NamespaceUri = "UAC", Guid = "87b3d53cb09334afd387a89f4d8fd00c")]
+public class TbCellItemButtonNotText : TbCellItem
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "12c0e49174f5dfc2031ce1b8f9683987")]
+public class TbCellItemTextbox1 : TbCellItem
 {
 }
 
@@ -20,13 +25,53 @@ public class QVDataGrid : FTOptix.UI.ColumnLayout
 {
 }
 
+[MapType(NamespaceUri = "UAC", Guid = "33f72057a3d5dc5e67e928f37d074d3e")]
+public class TabDevices : FTOptix.UI.Panel
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "9e690225f82e47b63d38730f7371454b")]
+public class Screen1 : FTOptix.UI.Screen
+{
+}
+
 [MapType(NamespaceUri = "UAC", Guid = "2eed7f40027f0270796ce001c913bb7a")]
 public class DialogBox1 : FTOptix.UI.Dialog
 {
 }
 
-[MapType(NamespaceUri = "UAC", Guid = "a7677167b63d816efd844557477a52c9")]
-public class QVDataGridDevices : QVDataGrid
+[MapType(NamespaceUri = "UAC", Guid = "47e303c85757f3983b9636a686b078df")]
+public class TbCellItemButton : TbCellItem
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "914141b16a1b7883fbe7e6a5c980e5a2")]
+public class NavigationPanel : FTOptix.UI.NavigationPanel
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "9096a8e31baa6de52ed16ebf619fe639")]
+public class TabTimes : FTOptix.UI.Panel
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "fcaa659ab56ec4cd39950514f4f602e9")]
+public class TabAnalogValues : FTOptix.UI.Panel
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "7e316292bbab341e9281ee4e0733eb1e")]
+public class TbCellItemCombobox : TbCellItem
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "93af6c89b34d4c09da519bc1a57d56cc")]
+public class TabParameters : FTOptix.UI.Panel
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "ab066a165004e390b4e8193f714df9f6")]
+public class TabFaults : FTOptix.UI.Panel
 {
 }
 
@@ -50,12 +95,22 @@ public class TbCellItemCheckBox : TbCellItem
 {
 }
 
-[MapType(NamespaceUri = "UAC", Guid = "47e303c85757f3983b9636a686b078df")]
-public class TbCellItemButton : TbCellItem
+[MapType(NamespaceUri = "UAC", Guid = "c2c32d95d6fb64a46154a30064df52e5")]
+public class TbCellHeader : FTOptix.UI.Rectangle
 {
 }
 
-[MapType(NamespaceUri = "UAC", Guid = "c2c32d95d6fb64a46154a30064df52e5")]
-public class TbCellHeader : FTOptix.UI.Rectangle
+[MapType(NamespaceUri = "UAC", Guid = "5b5dccda803ad9f93d6ca21ec4369aaa")]
+public class TbCellItemProgressbar : TbCellItem
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "4b2fd62627947fc6d00933c2e3865818")]
+public class DialogDevices : FTOptix.UI.Dialog
+{
+}
+
+[MapType(NamespaceUri = "UAC", Guid = "8f6413d4746dd9b509b31c9ca40a82f0")]
+public class TabDeviceSwitching : FTOptix.UI.Panel
 {
 }

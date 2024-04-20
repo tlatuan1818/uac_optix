@@ -174,22 +174,184 @@ public class Station : UAObject
             return (IUAVariable)Refs.GetVariable("Position");
         }
     }
-    public string WorkbarData
+    public bool StationTimesTabVisible
     {
         get
         {
-            return (string)Refs.GetVariable("WorkbarData").Value.Value;
+            return (bool)Refs.GetVariable("StationTimesTabVisible").Value.Value;
         }
         set
         {
-            Refs.GetVariable("WorkbarData").SetValue(value);
+            Refs.GetVariable("StationTimesTabVisible").SetValue(value);
         }
     }
-    public IUAVariable WorkbarDataVariable
+    public IUAVariable StationTimesTabVisibleVariable
     {
         get
         {
-            return (IUAVariable)Refs.GetVariable("WorkbarData");
+            return (IUAVariable)Refs.GetVariable("StationTimesTabVisible");
+        }
+    }
+    public bool StationDevicesTabVisible
+    {
+        get
+        {
+            return (bool)Refs.GetVariable("StationDevicesTabVisible").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationDevicesTabVisible").SetValue(value);
+        }
+    }
+    public IUAVariable StationDevicesTabVisibleVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationDevicesTabVisible");
+        }
+    }
+    public bool StationAnalogValuesTabVisible
+    {
+        get
+        {
+            return (bool)Refs.GetVariable("StationAnalogValuesTabVisible").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationAnalogValuesTabVisible").SetValue(value);
+        }
+    }
+    public IUAVariable StationAnalogValuesTabVisibleVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationAnalogValuesTabVisible");
+        }
+    }
+    public bool StationParametersTabVisible
+    {
+        get
+        {
+            return (bool)Refs.GetVariable("StationParametersTabVisible").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationParametersTabVisible").SetValue(value);
+        }
+    }
+    public IUAVariable StationParametersTabVisibleVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationParametersTabVisible");
+        }
+    }
+    public bool StationFaultsTabVisible
+    {
+        get
+        {
+            return (bool)Refs.GetVariable("StationFaultsTabVisible").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationFaultsTabVisible").SetValue(value);
+        }
+    }
+    public IUAVariable StationFaultsTabVisibleVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationFaultsTabVisible");
+        }
+    }
+    public string StationPathTime
+    {
+        get
+        {
+            return (string)Refs.GetVariable("StationPathTime").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationPathTime").SetValue(value);
+        }
+    }
+    public IUAVariable StationPathTimeVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationPathTime");
+        }
+    }
+    public string StationPathDevice
+    {
+        get
+        {
+            return (string)Refs.GetVariable("StationPathDevice").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationPathDevice").SetValue(value);
+        }
+    }
+    public IUAVariable StationPathDeviceVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationPathDevice");
+        }
+    }
+    public string StationPathAnalog
+    {
+        get
+        {
+            return (string)Refs.GetVariable("StationPathAnalog").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationPathAnalog").SetValue(value);
+        }
+    }
+    public IUAVariable StationPathAnalogVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationPathAnalog");
+        }
+    }
+    public string StationPathParameter
+    {
+        get
+        {
+            return (string)Refs.GetVariable("StationPathParameter").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationPathParameter").SetValue(value);
+        }
+    }
+    public IUAVariable StationPathParameterVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationPathParameter");
+        }
+    }
+    public string StationPathFault
+    {
+        get
+        {
+            return (string)Refs.GetVariable("StationPathFault").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("StationPathFault").SetValue(value);
+        }
+    }
+    public IUAVariable StationPathFaultVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("StationPathFault");
         }
     }
 #endregion

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "azTfKXl6M5cc0b56reavzI0TlPpZkAxLpz/u/JFb/LF44h5q96DgDHLBA8VW+fFJHZz1rTFtDpdOMoSdL948RQ==",
+  "dgSpecHash": "upmpEn2Czz9TSyqNMldnvR3b+7YI8CgUSp3XZSXkXu57SSDAD6+qOlw4JB095n6tHTFpBrg85T2KGZWZunM3yg==",
   "success": true,
-  "projectFilePath": "D:\\UAC 1\\UAC\\UAC\\ProjectFiles\\NetSolution\\UAC.csproj",
+  "projectFilePath": "D:\\uac_optix\\ProjectFiles\\NetSolution\\UAC.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

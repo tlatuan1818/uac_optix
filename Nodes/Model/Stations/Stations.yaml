@@ -7,11 +7,11 @@ Children:
   - Name: Number
     Type: BaseDataVariableType
     DataType: Int32
-    Value: 0
+    Value: 120
   - Name: Name
     Type: BaseDataVariableType
     DataType: String
-    Value: "0"
+    Value: "16B Clean Rinse"
   - Name: ID
     Type: BaseDataVariableType
     DataType: Int32
@@ -19,11 +19,618 @@ Children:
   - Name: WorkbarNo
     Type: BaseDataVariableType
     DataType: Int32
-    Value: 0
+    Value: 5
   - Name: DripTime
     Type: BaseDataVariableType
     DataType: Int32
     Value: 10
+  - Name: PendulumTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Locked
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Characteristic
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Times
+    Type: FolderType
+    Children:
+    - Name: Station1_Time
+      Type: StationTime
+      Children:
+      - Name: WorkbarData
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Rack"
+      - Name: DripTime
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "10"
+      - Name: PendulumTime
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+  - Name: Devices
+    Type: FolderType
+    Children:
+    - Name: Station1_Device1
+      Type: Device
+      Children:
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 2
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 2
+      - Name: Fault
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Base
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 2
+      - Name: TimeOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_164_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Spray rinse"
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Spray rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+    - Name: Station1_Device2
+      Type: Device
+      Children:
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Fault
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 2
+      - Name: Base
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: TimeOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_186_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Water feeding"
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Manual water refill"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+    - Name: Station1_Device3
+      Type: Device
+      Children:
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 2
+      - Name: Fault
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Base
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimeOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_186_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Water feeding"
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Enable auto refill, controlled via conductivity reading"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+  - Name: AnalogsValues
+    Type: FolderType
+    Children:
+    - Name: AnalogValue1
+      Type: AnalogValue
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "AI_286_B01"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Heating"
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "pH"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 45.7
+      - Name: Actual_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 5.5
+      - Name: Actual_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 2.5
+      - Name: Actual_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 3.0
+      - Name: TimerOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Operation_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+    - Name: AnalogValue2
+      Type: AnalogValue
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "AI_266_B01"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "μS"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 1.0399999618530273
+      - Name: Actual_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 5.0
+      - Name: Actual_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 15.0
+      - Name: Actual_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 15.0
+      - Name: TimerOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Operation_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+  - Name: Parameters
+    Type: FolderType
+    Children:
+    - Name: Parameter1
+      Type: Parameter
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_164_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Function
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Water spray valve maximum runtime"
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "s"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 10.0
+      - Name: Set
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 10.0
+    - Name: Parameter2
+      Type: Parameter
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_186_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Function
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Water refill valve maximum runtime"
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "s"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 60.0
+      - Name: Set
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 60.0
+    - Name: Parameter3
+      Type: Parameter
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 120
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "AI_266_B01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Function
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Conductivity stop adding DI water"
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "μS"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 9.399999618530273
+      - Name: Set
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 0.0
+  - Name: StationTimesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationDevicesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationAnalogValuesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationParametersTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationFaultsTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationPathTime
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station1/Times"
+  - Name: StationPathDevice
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station1/Devices"
+  - Name: StationPathAnalog
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station1/AnalogsValues"
+  - Name: StationPathParameter
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station1/Parameters"
+  - Name: Faults
+    Type: FolderType
+    Children:
+    - Name: Fault1
+      Type: Fault
+      Children:
+      - Name: Entry
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Confirmed
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Double click for confirmation"
+      - Name: Ok
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: User
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Description
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: FaultID
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+    - Name: Fault2
+      Type: Fault
+      Children:
+      - Name: Entry
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Confirmed
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Ok
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: User
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Description
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: FaultID
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+  - Name: StationPathFault
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station1/Faults"
+- Name: Station2
+  Type: Station
+  Children:
+  - Name: Number
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 121
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "16B Clean Rinse 121"
+  - Name: ID
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: WorkbarNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 2
+  - Name: DripTime
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 15
   - Name: PendulumTime
     Type: BaseDataVariableType
     DataType: Int32
@@ -40,7 +647,446 @@ Children:
     Type: BaseDataVariableType
     DataType: Int32
     Value: 0
-  - Name: WorkbarData
+  - Name: Times
+    Type: FolderType
+    Children:
+    - Name: Station1_Time
+      Type: StationTime
+      Children:
+      - Name: WorkbarData
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Rack"
+      - Name: DripTime
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "15"
+      - Name: PendulumTime
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+  - Name: Devices
+    Type: FolderType
+    Children:
+    - Name: Station1_Device1
+      Type: Device
+      Children:
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 1
+      - Name: Fault
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Base
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimeOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_164_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Spray rinse"
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "23 Hot Rinse"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Spray rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 121
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+    - Name: Station1_Device2
+      Type: Device
+      Children:
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Fault
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Base
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimeOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 121
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+  - Name: AnalogsValues
+    Type: FolderType
+    Children:
+    - Name: AnalogValue1
+      Type: AnalogValue
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "16B Clean Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 121
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "AI_742_B01"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Heating and cooling"
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "°C"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 35.9
+      - Name: Actual_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 30.0
+      - Name: Actual_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 5.0
+      - Name: Actual_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 5.0
+      - Name: TimerOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Operation_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+    - Name: AnalogValue2
+      Type: AnalogValue
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Name
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Select
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Status
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Actual_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Actual_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Actual_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: TimerOn
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: TimerOff
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Operation_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: Operation_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Target
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitplus
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: ShutdownMode_Fitsubtract
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+  - Name: Parameters
+    Type: FolderType
+    Children:
+    - Name: Parameter1
+      Type: Parameter
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "23 Hot Rinse"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 110
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Q_181_CR01"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Water refil values"
+      - Name: Function
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Water refil value maximum runtime"
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "s"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 299.0
+      - Name: Set
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 300.0
+    - Name: Parameter2
+      Type: Parameter
+      Children:
+      - Name: StationName
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: StationNo
+        Type: BaseDataVariableType
+        DataType: Int32
+        Value: 0
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: DeviceGroup
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Function
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Unit
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "0"
+      - Name: Act
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 0.0
+      - Name: Set
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 0.0
+  - Name: StationTimesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationDevicesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationAnalogValuesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: StationParametersTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationFaultsTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationPathTime
     Type: BaseDataVariableType
     DataType: String
-    Value: "Rack"
+    Value: "Model/Stations/Station2/Times"
+  - Name: StationPathDevice
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station2/Devices"
+  - Name: StationPathAnalog
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station2/AnalogsValues"
+  - Name: StationPathParameter
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station2/Parameters"
+  - Name: Faults
+    Type: FolderType
+    Children:
+    - Name: Fault1
+      Type: Fault
+      Children:
+      - Name: Entry
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Confirmed
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Ok
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Symbol
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: User
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: Description
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+      - Name: FaultID
+        Type: BaseDataVariableType
+        DataType: String
+        Value: ""
+  - Name: StationPathFault
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Model/Stations/Station2/Faults"

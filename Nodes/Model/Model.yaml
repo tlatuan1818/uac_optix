@@ -41,10 +41,46 @@ Children:
     Type: BaseDataVariableType
     DataType: Int32
     Value: 0
-  - Name: WorkbarData
+  - Name: StationTimesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationDevicesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationAnalogValuesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationParametersTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationFaultsTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: StationPathTime
     Type: BaseDataVariableType
     DataType: String
-    Value: "0"
+    Value: ""
+  - Name: StationPathDevice
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: StationPathAnalog
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: StationPathParameter
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: StationPathFault
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
 - Name: Hoist
   Id: g=287210e6d1c3e51bef1009b492a9297e
   Supertype: BaseObjectType
@@ -264,154 +300,9 @@ Children:
     Value: 0
   - Name: Position
     Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
+    DataType: String
+    Value: ""
 - File: devies/devies.yaml
-- Name: Station1
-  Type: Station
-  Children:
-  - Name: Number
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
-  - Name: Name
-    Type: BaseDataVariableType
-    DataType: String
-    Value: "0"
-  - Name: ID
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 120
-  - Name: WorkbarNo
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
-  - Name: DripTime
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
-  - Name: PendulumTime
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
-  - Name: Locked
-    Type: BaseDataVariableType
-    DataType: Boolean
-    Value: false
-  - Name: Characteristic
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
-  - Name: Position
-    Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
-  - Name: CoverOpen
-    Type: Device
-    Children:
-    - Name: Select
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Status
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Fault
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Base
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: TimeOn
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: TimerOff
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Symbol
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: DeviceGroup
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: StationName
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: Name
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: StationNo
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Position
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-  - Name: CoverClose
-    Type: Device
-    Children:
-    - Name: Select
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Status
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Fault
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Base
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: TimeOn
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: TimerOff
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Symbol
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: DeviceGroup
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: StationName
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: Name
-      Type: BaseDataVariableType
-      DataType: String
-      Value: "0"
-    - Name: StationNo
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-    - Name: Position
-      Type: BaseDataVariableType
-      DataType: Int32
-      Value: 0
-  - Name: WorkbarData
-    Type: BaseDataVariableType
-    DataType: String
-    Value: "0"
 - Name: QVDataGridColumn
   Id: g=1117a9f6dea8ce6022a29cb3f1413b01
   Supertype: BaseObjectType
@@ -450,10 +341,303 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: "/Objects/UAC/UI/Widgets/TbCellItem"
+      Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
     - Name: NodeClass
       Type: PropertyType
       DataType: NodePointerNodeClass
       ModellingRule: Optional
       Value: 1
+  - Name: Texthorizontalalignment
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
 - File: Stations/Stations.yaml
+- Name: StationTime
+  Id: g=de68e7e831c2f76de671ed3a7831972d
+  Supertype: BaseObjectType
+  Children:
+  - Name: WorkbarData
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: DripTime
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: PendulumTime
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+- Name: AnalogValue
+  Id: g=95a982c7872262cc9f425a4a9e9743e1
+  Supertype: BaseObjectType
+  Children:
+  - Name: StationName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Symbol
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Select
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Status
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Unit
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Act
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: Actual_Target
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: Actual_Fitplus
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: Actual_Fitsubtract
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: TimerOn
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimerOff
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Operation_Target
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: Operation_Fitplus
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: Operation_Fitsubtract
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: ShutdownMode_Target
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: ShutdownMode_Fitplus
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: ShutdownMode_Fitsubtract
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+- Name: Parameter
+  Id: g=db018bbe96bb0c7fcf0dc9c537e8ce48
+  Supertype: BaseObjectType
+  Children:
+  - Name: StationName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Symbol
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: DeviceGroup
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Function
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Unit
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Act
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Set
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+- Name: DataPath
+  Id: g=addf185c288b95ab0fa59d02f9add764
+  Type: BaseDataVariableType
+  DataType: String
+  Value: ""
+- Name: StationDialog
+  Type: BaseObjectType
+  Children:
+  - Name: dialogTitle
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: dialogStationNumber
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: dialogWorkbarNumber
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: dialogStationLock
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: dialogStationPathTime
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: dialogStationPathDevice
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: dialogStationPathAnalog
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: dialogStationPathParameter
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: dialogStationTimesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: dialogStationNavigationPanelVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: dialogStationDevicesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: dialogStationAnalogValuesTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: dialogStationParametersTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: dialogStationFaultTabVisible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: dialogStationPathFault
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+- Name: ComboboxValue
+  Id: g=97d27ab3cd7d6b48e18fa6aebc210693
+  Type: BaseObjectType
+  Children:
+  - Name: '---'
+    Id: g=14bbbc61583cd09cc7dccb9bf28f9906
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: 1
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 1
+  - Name: 2
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 2
+  - Name: 3
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 3
+  - Name: 4
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 4
+  - Name: 5
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 5
+  - Name: 6
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 6
+  - Name: 7
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 7
+  - Name: 8
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 8
+  - Name: 9
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 9
+  - Name: 10
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 10
+- Name: Fault
+  Id: g=31060e9afdf78ae8c21f5ec505cca49f
+  Supertype: BaseObjectType
+  Children:
+  - Name: Entry
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Confirmed
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Ok
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Symbol
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: User
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+  - Name: FaultID
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""

@@ -102,5 +102,23 @@ public class QVDataGridColumn : UAObject
             return (FTOptix.Core.NodePointer)Refs.GetVariable("CellType");
         }
     }
+    public int Texthorizontalalignment
+    {
+        get
+        {
+            return (int)Refs.GetVariable("Texthorizontalalignment").Value.Value;
+        }
+        set
+        {
+            Refs.GetVariable("Texthorizontalalignment").SetValue(value);
+        }
+    }
+    public IUAVariable TexthorizontalalignmentVariable
+    {
+        get
+        {
+            return (IUAVariable)Refs.GetVariable("Texthorizontalalignment");
+        }
+    }
 #endregion
 }
