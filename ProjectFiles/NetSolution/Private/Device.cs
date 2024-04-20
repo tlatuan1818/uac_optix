@@ -210,11 +210,11 @@ public class Device : UAObject
             return (IUAVariable)Refs.GetVariable("StationNo");
         }
     }
-    public int Position
+    public string Position
     {
         get
         {
-            return (int)Refs.GetVariable("Position").Value.Value;
+            return (string)Refs.GetVariable("Position").Value.Value;
         }
         set
         {

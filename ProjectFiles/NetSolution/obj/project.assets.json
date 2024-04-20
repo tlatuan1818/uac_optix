@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UAC 1\\UAC\\UAC\\ProjectFiles\\NetSolution\\UAC.csproj",
+      "projectUniqueName": "D:\\uac_optix\\ProjectFiles\\NetSolution\\UAC.csproj",
       "projectName": "UAC",
-      "projectPath": "D:\\UAC 1\\UAC\\UAC\\ProjectFiles\\NetSolution\\UAC.csproj",
+      "projectPath": "D:\\uac_optix\\ProjectFiles\\NetSolution\\UAC.csproj",
       "packagesPath": "C:\\Users\\TramLeAnhTuan\\.nuget\\packages\\",
-      "outputPath": "D:\\UAC 1\\UAC\\UAC\\ProjectFiles\\NetSolution\\obj\\",
+      "outputPath": "D:\\uac_optix\\ProjectFiles\\NetSolution\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

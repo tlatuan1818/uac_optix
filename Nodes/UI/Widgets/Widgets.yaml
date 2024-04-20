@@ -15,7 +15,7 @@ Children:
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 330.0
+    Value: 475.0
   - Name: QVDataGridLogic
     Type: NetLogic
   - Name: TItem
@@ -149,304 +149,1145 @@ Children:
         DataType: VerticalAlignment
         ModellingRule: Optional
         Value: 3
-- Name: TbCellItem
-  Id: g=7bf9b126085a9bc60483d0c4e4d9d906
-  Supertype: Rectangle
+  - Name: Data Path
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+- File: Cell/Cell.yaml
+- Name: ns=7;NavigationPanel
+  Id: g=914141b16a1b7883fbe7e6a5c980e5a2
+  Supertype: ns=3;NavigationPanel
+  ReferenceType: HasComponent
+  Children:
+  - Class: Reference
+    Target: ns=3;i=1181
+    Direction: Forward
+  - Class: Reference
+    Target: ns=3;i=1183
+    Direction: Forward
+  - Name: Panels
+    Type: BaseObjectType
+    Children:
+    - Name: Times
+      Type: NavigationPanelItem
+      Children:
+      - Name: Title
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Times"}
+      - Name: Panel
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/UAC/UI/Widgets/TabTimes"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: Visible
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+      - Name: Enabled
+        Type: BaseDataVariableType
+        DataType: Boolean
+        ModellingRule: Optional
+        Value: true
+    - Name: Devices
+      Type: NavigationPanelItem
+      Children:
+      - Name: Title
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Devices"}
+      - Name: Panel
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/UAC/UI/Widgets/TabDevices"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: Visible
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+    - Name: Analog values
+      Type: NavigationPanelItem
+      Children:
+      - Name: Title
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Analog values"}
+      - Name: Panel
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/UAC/UI/Widgets/TabAnalogValues"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: Enabled
+        Type: BaseDataVariableType
+        DataType: Boolean
+        ModellingRule: Optional
+        Value: true
+      - Name: Visible
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+    - Name: Parameters
+      Type: NavigationPanelItem
+      Children:
+      - Name: Title
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Parameters"}
+      - Name: Panel
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/UAC/UI/Widgets/TabParameters"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: Visible
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+    - Name: Faults
+      Type: NavigationPanelItem
+      Children:
+      - Name: Title
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Faults"}
+      - Name: Panel
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/UAC/UI/Widgets/TabFaults"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: ImagePath
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        Value: ""
+      - Name: Visible
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+  - Name: CurrentPanel
+    Type: NodePointer
+    DataType: NodeId
+    AccessLevel: Read
+    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+  - Name: CurrentTabIndex
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 300.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 490.0
+  - Name: LeftMargin
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 0.0
+  - Name: TopMargin
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 0.0
+  - Name: HorizontalAlignment
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: RightMargin
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 0.0
+  - Name: TabHeight
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 30.0
+  - Name: Visible
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/UAC/Model/StationDialog/dialogStationNavigationPanelVisible@Value"
+  - Name: Style
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Default"
+  - Name: Appearance
+    Type: BaseVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: ""
+  - Name: AttachedPanelLoader
+    Type: NodePointer
+    DataType: NodeId
+    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container/PanelLoader"
+- Name: TabTimes
+  Id: g=9096a8e31baa6de52ed16ebf619fe639
+  Supertype: Panel
   ReferenceType: HasComponent
   Children:
   - Name: Width
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 170.0
+    Value: 300.0
   - Name: Height
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 70.0
-  - Name: BorderThickness
-    Type: BaseDataVariableType
-    DataType: Size
-    ModellingRule: Optional
-    Value: 1.0
-- Name: TbCellItemText
-  Id: g=cc3b658691416b4ce91d9f866c9ff028
-  Supertype: TbCellItem
-  ReferenceType: HasComponent
-  Children:
-  - Name: Text
-    Type: Label
+    Value: 300.0
+  - Name: TimesDataGrid
+    Type: QVDataGrid
     Children:
-    - Name: Text
+    - Name: QVDataGridLogic
+      Type: NetLogic
+    - Name: TItem
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/UAC/Model/StationTime"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: Columns
+      Type: BaseObjectType
+      Children:
+      - Name: 'Work bar data '
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Work bar data "
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/WorkbarData@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 100
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/StationTime"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Drip time
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Drip time [s] (leaving station)"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/DripTime@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 170
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/StationTime"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Pendulum time
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Pendulum time [s] tank to tank"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/PendulumTime@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 190
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/StationTime"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+    - Name: ScrollView
+      Type: ScrollView
+      Children:
+      - Name: VerticalLayout
+        Type: ColumnLayout
+        Children:
+        - Name: Header
+          Type: RowLayout
+          Children:
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            Value: 0.0
+        - Name: Body
+          Type: ColumnLayout
+          Children:
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            Value: 50.0
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 475.0
+    - Name: Data Path
       Type: BaseDataVariableType
-      DataType: LocalizedText
-      ModellingRule: Optional
-      Value: {"LocaleId":"en-US","Text":"HeaderText"}
-    - Name: Width
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: -1.0
-    - Name: Height
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: -1.0
-    - Name: HorizontalAlignment
-      Type: BaseVariableType
-      DataType: HorizontalAlignment
-      ModellingRule: Optional
-      Value: 2
-    - Name: VerticalAlignment
-      Type: BaseVariableType
-      DataType: VerticalAlignment
-      ModellingRule: Optional
-      Value: 2
-    - Name: TextHorizontalAlignment
-      Type: BaseVariableType
-      DataType: TextHorizontalAlignment
-      ModellingRule: Optional
-      Value: 0
-    - Name: TextVerticalAlignment
-      Type: BaseVariableType
-      DataType: TextVerticalAlignment
-      ModellingRule: Optional
-      Value: 1
-    - Name: Elide
-      Type: BaseDataVariableType
-      DataType: ElideEnum
-      ModellingRule: Optional
-      Value: 3
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: BottomMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: RightMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: FontSize
-      Type: BaseDataVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: -1.0
-    - Name: WordWrap
-      Type: BaseDataVariableType
-      DataType: Boolean
-      ModellingRule: Optional
-      Value: false
-  - Name: Height
-    Type: BaseVariableType
-    DataType: Size
-    ModellingRule: Optional
-    Value: 30.0
-  - Name: BorderColor
-    Type: BaseDataVariableType
-    DataType: Color
-    ModellingRule: Optional
-    Value: "#b3b3b3"
-- Name: TbCellItemEditText
-  Id: g=ef6646ef4ed3f0a6c98a8589019a4e8b
-  Supertype: TbCellItem
-  ReferenceType: HasComponent
-  Children:
-  - Name: TextBox
-    Type: TextBox
-    Children:
-    - Name: Text
-      Type: BaseDataVariableType
-      DataType: LocalizedText
-      Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
-    - Name: Width
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: -1.0
-    - Name: Height
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: -1.0
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: HorizontalAlignment
-      Type: BaseVariableType
-      DataType: HorizontalAlignment
-      ModellingRule: Optional
-      Value: 2
-    - Name: VerticalAlignment
-      Type: BaseVariableType
-      DataType: VerticalAlignment
-      ModellingRule: Optional
-      Value: 2
-    - Name: RightMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: BottomMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-  - Name: Height
-    Type: BaseVariableType
-    DataType: Size
-    ModellingRule: Optional
-    Value: 30.0
-- Name: TbCellItemCheckBox
-  Id: g=ac3779f5ab5cf3586d20cd29a6c5cb9f
-  Supertype: TbCellItem
-  ReferenceType: HasComponent
-  Children:
-  - Name: Checkbox
-    Type: CheckBox
-    Children:
-    - Name: Checked
-      Type: BaseDataVariableType
-      DataType: Boolean
-      Value: false
-    - Name: Text
-      Type: BaseDataVariableType
-      DataType: LocalizedText
-      ModellingRule: Optional
-      Value: {"LocaleId":"en-US","Text":""}
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: Width
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 30.0
-    - Name: Height
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 25.0
-    - Name: HorizontalAlignment
-      Type: BaseVariableType
-      DataType: HorizontalAlignment
-      ModellingRule: Optional
-      Value: 3
-    - Name: VerticalAlignment
-      Type: BaseVariableType
-      DataType: VerticalAlignment
-      ModellingRule: Optional
-      Value: 3
-    - Name: RightMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: BottomMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-  - Name: Height
-    Type: BaseVariableType
-    DataType: Size
-    ModellingRule: Optional
-    Value: 30.0
-- Name: TbCellItemButton
-  Id: g=47e303c85757f3983b9636a686b078df
-  Supertype: TbCellItem
-  ReferenceType: HasComponent
-  Children:
-  - Name: Button
-    Type: Button
-    Children:
-    - Name: Text
-      Type: BaseDataVariableType
-      DataType: LocalizedText
-      ModellingRule: Optional
-      Value: {"LocaleId":"en-US","Text":"X"}
-    - Name: LeftMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: Width
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 74.0
-    - Name: HorizontalAlignment
-      Type: BaseVariableType
-      DataType: HorizontalAlignment
-      ModellingRule: Optional
-      Value: 2
-    - Name: VerticalAlignment
-      Type: BaseVariableType
-      DataType: VerticalAlignment
-      ModellingRule: Optional
-      Value: 2
-  - Name: Height
-    Type: BaseVariableType
-    DataType: Size
-    ModellingRule: Optional
-    Value: 30.0
-- Name: TbCellHeader
-  Id: g=c2c32d95d6fb64a46154a30064df52e5
-  Supertype: Rectangle
+      DataType: String
+      Value: "Model/Stations/Station1/Times"
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/UAC/Model/StationDialog/dialogStationPathTime@Value"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+- Name: TabDevices
+  Id: g=33f72057a3d5dc5e67e928f37d074d3e
+  Supertype: Panel
   ReferenceType: HasComponent
   Children:
   - Name: Width
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 170.0
+    Value: -1.0
   - Name: Height
     Type: BaseVariableType
     DataType: Size
     ModellingRule: Optional
-    Value: 30.0
-  - Name: BorderThickness
-    Type: BaseDataVariableType
-    DataType: Size
+    Value: -1.0
+  - Name: HorizontalAlignment
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
     ModellingRule: Optional
-    Value: 1.0
-  - Name: Text
-    Type: Label
+    Value: 3
+  - Name: VerticalAlignment
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: DevicesDataGrid
+    Type: QVDataGrid
     Children:
-    - Name: Text
+    - Name: QVDataGridLogic
+      Type: NetLogic
+    - Name: TItem
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/UAC/Model/Device"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: Columns
+      Type: BaseObjectType
+      Children:
+      - Name: Station name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Station name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/StationName@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 100
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: No.
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "No."
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/StationNo@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 50
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Position
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Position"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Position@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 80
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 2
+      - Name: Symbol
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Symbol"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Symbol@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Device group
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Device group"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/DeviceGroup@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Name@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 300
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Select
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Select"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Select@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Status
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Status"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Status@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Fault
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fault"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Fault@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Base
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Base"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Base@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: On
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "On"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/TimeOn@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemCombobox"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Off
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Off"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/TimerOff@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemCombobox"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+    - Name: ScrollView
+      Type: ScrollView
+      Children:
+      - Name: VerticalLayout
+        Type: ColumnLayout
+        Children:
+        - Name: Header
+          Type: RowLayout
+          Children:
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: -1.0
+        - Name: Body
+          Type: ColumnLayout
+          Children:
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -10.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: ScrollAxesEnabled
+        Type: BaseDataVariableType
+        DataType: ScrollAxesEnabledEnum
+        ModellingRule: Optional
+        Value: 1
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 460.0
+    - Name: Data Path
       Type: BaseDataVariableType
-      DataType: LocalizedText
-      ModellingRule: Optional
-      Value: {"LocaleId":"en-US","Text":"HeaderText"}
+      DataType: String
+      Value: "Model/Stations/Station1/Devices"
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/UAC/Model/StationDialog/dialogStationPathDevice@Value"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
     - Name: Width
       Type: BaseVariableType
       DataType: Size
@@ -467,53 +1308,4538 @@ Children:
       DataType: VerticalAlignment
       ModellingRule: Optional
       Value: 3
-    - Name: TextHorizontalAlignment
-      Type: BaseVariableType
-      DataType: TextHorizontalAlignment
-      ModellingRule: Optional
-      Value: 0
-    - Name: TextVerticalAlignment
-      Type: BaseVariableType
-      DataType: TextVerticalAlignment
-      ModellingRule: Optional
-      Value: 1
-    - Name: Elide
+- Name: TabAnalogValues
+  Id: g=fcaa659ab56ec4cd39950514f4f602e9
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: HorizontalAlignment
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: AnalogDataGrid
+    Type: QVDataGrid
+    Children:
+    - Name: QVDataGridLogic
+      Type: NetLogic
+    - Name: TItem
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/UAC/Model/AnalogValue"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: Columns
+      Type: BaseObjectType
+      Children:
+      - Name: Station name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Station name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/StationName@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 100
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: No.
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "No."
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/StationNo@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 50
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Symbol
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Symbol"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Symbol@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Name@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 300
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Act_Set point
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Act/Set point"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Act@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 100
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemProgressbar"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Select
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Select"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Select@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButtonNotText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Status
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Status"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Status@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButtonNotText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Unit
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Unit"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Unit@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Actual_Act
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Act"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Act@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Actual_Target
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Target"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Actual_Target@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Actual_Fitplus
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fit+"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Actual_Fitplus@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Actual_Fitsubtract
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fit-"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Actual_Fitsubtract@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: TimerOn
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "On"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/TimerOn@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemCombobox"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: TimerOff
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Off"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/TimerOff@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemCombobox"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Operation_Target
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Target"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Operation_Target@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Operation_Fitplus
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fit+"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Operation_Fitplus@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Operation_Fitsubtract
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fit-"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Operation_Fitsubtract@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: ShutdownMode_Target
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Target"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/ShutdownMode_Target@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: ShutdownMode_Fitplus
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fit+"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/ShutdownMode_Fitplus@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: ShutdownMode_Fitsubtract
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fit-"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/ShutdownMode_Fitsubtract@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/AnalogValue"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+    - Name: ScrollView
+      Type: ScrollView
+      Children:
+      - Name: VerticalLayout
+        Type: ColumnLayout
+        Children:
+        - Name: Header
+          Type: RowLayout
+          Children:
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: -1.0
+        - Name: Body
+          Type: ColumnLayout
+          Children:
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -10.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: ScrollAxesEnabled
+        Type: BaseDataVariableType
+        DataType: ScrollAxesEnabledEnum
+        ModellingRule: Optional
+        Value: 1
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 460.0
+    - Name: Data Path
       Type: BaseDataVariableType
-      DataType: ElideEnum
-      ModellingRule: Optional
-      Value: 3
-    - Name: LeftMargin
+      DataType: String
+      Value: "Model/Stations/Station1/Devices"
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/UAC/Model/StationDialog/dialogStationPathAnalog@Value"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Width
       Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: BottomMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: RightMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: TopMargin
-      Type: BaseVariableType
-      DataType: Size
-      ModellingRule: Optional
-      Value: 5.0
-    - Name: FontSize
-      Type: BaseDataVariableType
       DataType: Size
       ModellingRule: Optional
       Value: -1.0
-    - Name: WordWrap
-      Type: BaseDataVariableType
-      DataType: Boolean
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
       ModellingRule: Optional
-      Value: false
-  - Name: BorderColor
-    Type: BaseDataVariableType
-    DataType: Color
+      Value: -1.0
+    - Name: HorizontalAlignment
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+- Name: TabParameters
+  Id: g=93af6c89b34d4c09da519bc1a57d56cc
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
     ModellingRule: Optional
-    Value: "#b3b3b3"
+    Value: -1.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: HorizontalAlignment
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: ParameterDataGrid
+    Type: QVDataGrid
+    Children:
+    - Name: QVDataGridLogic
+      Type: NetLogic
+    - Name: TItem
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/UAC/Model/Parameter"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: Columns
+      Type: BaseObjectType
+      Children:
+      - Name: Station name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Station name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/StationName@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 100
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: No.
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "No."
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/StationNo@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 50
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Position
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Position"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Position@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 80
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 2
+      - Name: Symbol
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Symbol"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Symbol@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Device group
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Device group"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/DeviceGroup@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Function
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Function"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Unit/TItem/Function@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 300
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Unit
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Unit"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Unit@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Act
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Act"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Act@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 2
+      - Name: Set
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Set"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../TItem/Set@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Parameter"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemEditText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 2
+    - Name: ScrollView
+      Type: ScrollView
+      Children:
+      - Name: VerticalLayout
+        Type: ColumnLayout
+        Children:
+        - Name: Header
+          Type: RowLayout
+          Children:
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: -1.0
+        - Name: Body
+          Type: ColumnLayout
+          Children:
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -10.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: ScrollAxesEnabled
+        Type: BaseDataVariableType
+        DataType: ScrollAxesEnabledEnum
+        ModellingRule: Optional
+        Value: 1
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 460.0
+    - Name: Data Path
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Model/Stations/Station1/Devices"
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/UAC/Model/StationDialog/dialogStationPathParameter@Value"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Width
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: -1.0
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: -1.0
+    - Name: HorizontalAlignment
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+- Name: TabFaults
+  Id: g=ab066a165004e390b4e8193f714df9f6
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 1000.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: HorizontalAlignment
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalLayout1
+    Type: ColumnLayout
+    Children:
+    - Name: Width
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 50.0
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: -1.0
+    - Name: Rectangle1
+      Type: Rectangle
+      Children:
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 50.0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: -1.0
+      - Name: BorderThickness
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: HorizontalLayout1
+        Type: RowLayout
+        Children:
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 3
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 2
+        - Name: VerticalLayout1
+          Type: ColumnLayout
+          Children:
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 150.0
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 135.0
+          - Name: LeftMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 10.0
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: Rectangle1
+            Type: Rectangle
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 50.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 135.0
+            - Name: BorderThickness
+              Type: BaseDataVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 1.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: VerticalAlignment
+              Type: BaseVariableType
+              DataType: VerticalAlignment
+              ModellingRule: Optional
+              Value: 0
+            - Name: BorderColor
+              Type: BaseDataVariableType
+              DataType: Color
+              ModellingRule: Optional
+              Value: "#b3b3b3"
+            - Name: OptionButton1
+              Type: RadioButton
+              Children:
+              - Name: Checked
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Unconfirmed"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 10.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 22.0
+            - Name: OptionButton2
+              Type: RadioButton
+              Children:
+              - Name: Checked
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Not fixed"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 10.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+            - Name: LeftMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+          - Name: Rectangle2
+            Type: Rectangle
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+            - Name: BorderThickness
+              Type: BaseDataVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 1.0
+            - Name: Label1
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Actual Faults"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 2.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 2.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: -4.0
+              - Name: BottomMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 0.0
+            - Name: BorderColor
+              Type: BaseDataVariableType
+              DataType: Color
+              ModellingRule: Optional
+              Value: "#00000000"
+            - Name: LeftMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 10.0
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -139.0
+          - Name: VerticalAlignment
+            Type: BaseVariableType
+            DataType: VerticalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: BottomMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+        - Name: VerticalLayout3
+          Type: ColumnLayout
+          Children:
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 150.0
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 135.0
+          - Name: LeftMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 10.0
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: Rectangle1
+            Type: Rectangle
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 50.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 135.0
+            - Name: BorderThickness
+              Type: BaseDataVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 1.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: VerticalAlignment
+              Type: BaseVariableType
+              DataType: VerticalAlignment
+              ModellingRule: Optional
+              Value: 0
+            - Name: BorderColor
+              Type: BaseDataVariableType
+              DataType: Color
+              ModellingRule: Optional
+              Value: "#b3b3b3"
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+            - Name: RightMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+            - Name: HorizontalLayout1
+              Type: RowLayout
+              Children:
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 760.0
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 160.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: Wrap
+                Type: BaseDataVariableType
+                DataType: Boolean
+                ModellingRule: Optional
+                Value: true
+              - Name: Checkbox1
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Transport system"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox2
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Cabinet fuses"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox3
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Emergency off"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox4
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Level"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox5
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"System"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox6
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Rectifier"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox7
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Devices"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox8
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Load/Unload"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox9
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Analog values"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox10
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Maintenace"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: Checkbox11
+                Type: CheckBox
+                Children:
+                - Name: Checked
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  Value: false
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Temperature"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 5.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 370.0
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 0.0
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 0.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 5.0
+              - Name: BottomMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 5.0
+            - Name: BottomMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+          - Name: Rectangle2
+            Type: Rectangle
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+            - Name: BorderThickness
+              Type: BaseDataVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 1.0
+            - Name: Label1
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Faults Filter"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 2.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 2.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: -4.0
+              - Name: BottomMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 0.0
+            - Name: BorderColor
+              Type: BaseDataVariableType
+              DataType: Color
+              ModellingRule: Optional
+              Value: "#00000000"
+            - Name: LeftMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 10.0
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -139.0
+          - Name: VerticalAlignment
+            Type: BaseVariableType
+            DataType: VerticalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: BottomMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 3
+          - Name: RightMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 10.0
+        - Name: TopMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+        - Name: BottomMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: BorderColor
+        Type: BaseDataVariableType
+        DataType: Color
+        ModellingRule: Optional
+        Value: "#b3b3b3"
+    - Name: Rectangle2
+      Type: Rectangle
+      Children:
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 50.0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: -1.0
+      - Name: BorderThickness
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: HorizontalLayout1
+        Type: RowLayout
+        Children:
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 3
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 2
+        - Name: VerticalLayout1
+          Type: ColumnLayout
+          Children:
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 150.0
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 50.0
+          - Name: LeftMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 10.0
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: Rectangle1
+            Type: Rectangle
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 50.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 50.0
+            - Name: BorderThickness
+              Type: BaseDataVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 1.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: VerticalAlignment
+              Type: BaseVariableType
+              DataType: VerticalAlignment
+              ModellingRule: Optional
+              Value: 0
+            - Name: BorderColor
+              Type: BaseDataVariableType
+              DataType: Color
+              ModellingRule: Optional
+              Value: "#b3b3b3"
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+            - Name: LeftMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 0.0
+            - Name: HorizontalLayout1
+              Type: RowLayout
+              Children:
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: Label1
+                Type: Label
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Search filter"}
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 16.0
+                - Name: TextHorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: TextHorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 0
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 20.0
+                - Name: TextVerticalAlignment
+                  Type: BaseVariableType
+                  DataType: TextVerticalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+              - Name: TextBox1
+                Type: TextBox
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 665.0
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 15.0
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: HorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: HorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: BottomMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 15.0
+                - Name: TextVerticalAlignment
+                  Type: BaseVariableType
+                  DataType: TextVerticalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+              - Name: Button1
+                Type: Button
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":""}
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 15.0
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: BottomMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 15.0
+                - Name: ImagePath
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  ModellingRule: Optional
+                  Value: "file:///C:/Users/TramLeAnhTuan/Downloads/delete_kvz9zk04qsht (1).svg"
+                - Name: ImageWidth
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 22.0
+                - Name: ImageHeight
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+              - Name: TextBox2
+                Type: TextBox
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 664.0
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 15.0
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: HorizontalAlignment
+                  Type: BaseVariableType
+                  DataType: HorizontalAlignment
+                  ModellingRule: Optional
+                  Value: 3
+                - Name: VerticalAlignment
+                  Type: BaseVariableType
+                  DataType: VerticalAlignment
+                  ModellingRule: Optional
+                  Value: 2
+                - Name: BottomMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 15.0
+                - Name: RightMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TextVerticalAlignment
+                  Type: BaseVariableType
+                  DataType: TextVerticalAlignment
+                  ModellingRule: Optional
+                  Value: 1
+          - Name: Rectangle2
+            Type: Rectangle
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+            - Name: BorderThickness
+              Type: BaseDataVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 1.0
+            - Name: Label1
+              Type: Label
+              Children:
+              - Name: Text
+                Type: BaseDataVariableType
+                DataType: LocalizedText
+                ModellingRule: Optional
+                Value: {"LocaleId":"en-US","Text":"Filter"}
+              - Name: LeftMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 2.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: VerticalAlignment
+                Type: BaseVariableType
+                DataType: VerticalAlignment
+                ModellingRule: Optional
+                Value: 2
+              - Name: RightMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 2.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: -4.0
+              - Name: BottomMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 0.0
+            - Name: BorderColor
+              Type: BaseDataVariableType
+              DataType: Color
+              ModellingRule: Optional
+              Value: "#00000000"
+            - Name: LeftMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 10.0
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -54.0
+          - Name: VerticalAlignment
+            Type: BaseVariableType
+            DataType: VerticalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: BottomMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 3
+        - Name: TopMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+        - Name: BottomMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+        - Name: RightMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: BorderColor
+        Type: BaseDataVariableType
+        DataType: Color
+        ModellingRule: Optional
+        Value: "#b3b3b3"
+      - Name: LeftMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 0.0
+      - Name: TopMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: -1.0
+    - Name: FaultDataGrid
+      Type: QVDataGrid
+      Children:
+      - Name: QVDataGridLogic
+        Type: NetLogic
+      - Name: TItem
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/UAC/Model/Fault"
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"IdType":0,"Id":0,"Namespace":-1}
+      - Name: Columns
+        Type: BaseObjectType
+        Children:
+        - Name: Entry
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Entry"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/Entry@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: Confirmed
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Confirmed"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/Confirmed@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: Ok
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Ok"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/Ok@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: Position
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Position"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/Position@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: Symbol
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Symbol"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/Symbol@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: User
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "User"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/User@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: Description
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Description"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/Description@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+        - Name: FaultID
+          Type: QVDataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "FaultID"
+          - Name: Property
+            Type: BaseDataVariableType
+            DataType: String
+            Value: ""
+            Children:
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/UAC/Model/Fault/FaultID@BrowseName"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 200
+          - Name: TItem
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/Model/Fault"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: CellType
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+          - Name: Texthorizontalalignment
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 0
+      - Name: ScrollView
+        Type: ScrollView
+        Children:
+        - Name: VerticalLayout
+          Type: ColumnLayout
+          Children:
+          - Name: Header
+            Type: RowLayout
+            Children:
+            - Name: TopMargin
+              Type: BaseVariableType
+              DataType: Size
+              Value: 0.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 0
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: -1.0
+          - Name: Body
+            Type: ColumnLayout
+            Children:
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              Value: 50.0
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: -10.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: VerticalAlignment
+            Type: BaseVariableType
+            DataType: VerticalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: -1.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 3
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 300.0
+        - Name: ScrollAxesEnabled
+          Type: BaseDataVariableType
+          DataType: ScrollAxesEnabledEnum
+          ModellingRule: Optional
+          Value: 1
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 180.0
+      - Name: Data Path
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Model/Stations/Station1/Devices"
+        Children:
+        - Name: DynamicLink
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "/Objects/UAC/Model/StationDialog/dialogStationPathFault@Value"
+          Children:
+          - Name: Mode
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: -1.0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: -1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: BottomMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 0.0
+      - Name: LeftMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 0.0
+    - Name: HorizontalAlignment
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 0
+    - Name: Rectangle3
+      Type: Rectangle
+      Children:
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 50.0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 50.0
+      - Name: BorderThickness
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: HorizontalLayout1
+        Type: RowLayout
+        Children:
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 3
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 2
+        - Name: VerticalLayout1
+          Type: ColumnLayout
+          Children:
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 150.0
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 50.0
+          - Name: LeftMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: VerticalAlignment
+            Type: BaseVariableType
+            DataType: VerticalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: BottomMargin
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 3
+          - Name: HorizontalLayout1
+            Type: RowLayout
+            Children:
+            - Name: Width
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 50.0
+            - Name: Height
+              Type: BaseVariableType
+              DataType: Size
+              ModellingRule: Optional
+              Value: 50.0
+            - Name: HorizontalAlignment
+              Type: BaseVariableType
+              DataType: HorizontalAlignment
+              ModellingRule: Optional
+              Value: 3
+            - Name: HorizontalLayout1
+              Type: RowLayout
+              Children:
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: Button1
+                Type: Button
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Print"}
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: Style
+                  Type: BaseDataVariableType
+                  DataType: String
+                  ModellingRule: Optional
+                  Value: "ButtonCellItemButton"
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 130.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 0.0
+                - Name: ImagePath
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  ModellingRule: Optional
+                  Value: "file:///C:/Users/TramLeAnhTuan/Downloads/print_g0vfajdhsfs3_64.png"
+                - Name: ImagePosition
+                  Type: BaseDataVariableType
+                  DataType: Position
+                  ModellingRule: Optional
+                  Value: 3
+                - Name: ImageWidth
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 25.0
+              - Name: Button2
+                Type: Button
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Confirm"}
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: Style
+                  Type: BaseDataVariableType
+                  DataType: String
+                  ModellingRule: Optional
+                  Value: "ButtonCellItemButton"
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 130.0
+                - Name: LeftMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: ImagePosition
+                  Type: BaseDataVariableType
+                  DataType: Position
+                  ModellingRule: Optional
+                  Value: 3
+                - Name: ImagePath
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  ModellingRule: Optional
+                  Value: "file:///C:/Users/TramLeAnhTuan/Downloads/like_hblv4gnovdxu_64.png"
+                - Name: TextPosition
+                  Type: BaseDataVariableType
+                  DataType: Position
+                  ModellingRule: Optional
+                  Value: 4
+                - Name: ImageWidth
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+              - Name: TopMargin
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 0.0
+            - Name: HorizontalLayout2
+              Type: RowLayout
+              Children:
+              - Name: Width
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+              - Name: Height
+                Type: BaseVariableType
+                DataType: Size
+                ModellingRule: Optional
+                Value: 50.0
+              - Name: HorizontalAlignment
+                Type: BaseVariableType
+                DataType: HorizontalAlignment
+                ModellingRule: Optional
+                Value: 3
+              - Name: Button1
+                Type: Button
+                Children:
+                - Name: Text
+                  Type: BaseDataVariableType
+                  DataType: LocalizedText
+                  ModellingRule: Optional
+                  Value: {"LocaleId":"en-US","Text":"Update"}
+                - Name: Height
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 30.0
+                - Name: Style
+                  Type: BaseDataVariableType
+                  DataType: String
+                  ModellingRule: Optional
+                  Value: "ButtonCellItemButton"
+                - Name: Width
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 130.0
+                - Name: TopMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 10.0
+                - Name: RightMargin
+                  Type: BaseVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 0.0
+                - Name: ImagePosition
+                  Type: BaseDataVariableType
+                  DataType: Position
+                  ModellingRule: Optional
+                  Value: 3
+                - Name: ImageWidth
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  ModellingRule: Optional
+                  Value: 27.0
+                - Name: ImagePath
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  ModellingRule: Optional
+                  Value: "file:///C:/Users/TramLeAnhTuan/Downloads/update_e2kmkwui5dde_64 (2).png"
+              - Name: ContentAlignment
+                Type: BaseVariableType
+                DataType: ContentHorizontalAlignment
+                ModellingRule: Optional
+                Value: 2
+        - Name: TopMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+        - Name: BottomMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+        - Name: RightMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+        - Name: LeftMargin
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 10.0
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: BorderColor
+        Type: BaseDataVariableType
+        DataType: Color
+        ModellingRule: Optional
+        Value: "#b3b3b3"
+      - Name: LeftMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 0.0
+      - Name: TopMargin
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 5.0
+    - Name: ContentAlignment
+      Type: BaseVariableType
+      DataType: ContentVerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+- Name: TabDeviceSwitching
+  Id: g=8f6413d4746dd9b509b31c9ca40a82f0
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: Height
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: HorizontalAlignment
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: DevicesDataGrid
+    Type: QVDataGrid
+    Children:
+    - Name: QVDataGridLogic
+      Type: NetLogic
+    - Name: TItem
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/UAC/Model/Device"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+    - Name: Columns
+      Type: BaseObjectType
+      Children:
+      - Name: Station name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Station name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/StationName@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 100
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: No.
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "No."
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/StationNo@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 50
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Position
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Position"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Position@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 80
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 2
+      - Name: Symbol
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Symbol"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Symbol@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Device group
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Device group"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/DeviceGroup@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 120
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Name
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Name"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Name@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 300
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemText"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 0
+      - Name: Select
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Select"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Select@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Status
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Status"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Status@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Fault
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Fault"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Fault@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Base
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Base"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/Base@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemButton"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: On
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "On"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/TimeOn@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemCombobox"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+      - Name: Off
+        Type: QVDataGridColumn
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Off"
+        - Name: Property
+          Type: BaseDataVariableType
+          DataType: String
+          Value: ""
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/UAC/Model/Device/TimerOff@BrowseName"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Width
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 60
+        - Name: TItem
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/Model/Device"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+        - Name: CellType
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItemCombobox"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Objects/UAC/UI/Widgets/Cell/TbCellItem"
+        - Name: Texthorizontalalignment
+          Type: BaseDataVariableType
+          DataType: Int32
+          Value: 1
+    - Name: ScrollView
+      Type: ScrollView
+      Children:
+      - Name: VerticalLayout
+        Type: ColumnLayout
+        Children:
+        - Name: Header
+          Type: RowLayout
+          Children:
+          - Name: TopMargin
+            Type: BaseVariableType
+            DataType: Size
+            Value: 0.0
+          - Name: HorizontalAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+            ModellingRule: Optional
+            Value: 0
+          - Name: Width
+            Type: BaseVariableType
+            DataType: Size
+            ModellingRule: Optional
+            Value: -1.0
+        - Name: Body
+          Type: ColumnLayout
+          Children:
+          - Name: Height
+            Type: BaseVariableType
+            DataType: Size
+            Value: 50.0
+        - Name: Height
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -10.0
+        - Name: HorizontalAlignment
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: VerticalAlignment
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 0
+        - Name: Width
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: -1.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 0
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: ScrollAxesEnabled
+        Type: BaseDataVariableType
+        DataType: ScrollAxesEnabledEnum
+        ModellingRule: Optional
+        Value: 1
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 460.0
+    - Name: Data Path
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Model/Stations/Station1/Devices"
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/UAC/Model/StationDialog/dialogStationPathDevice@Value"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Width
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: -1.0
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: -1.0
+    - Name: HorizontalAlignment
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3

@@ -2,7 +2,6 @@ Name: devies
 Type: FolderType
 Children:
 - Name: Device1
-  Id: g=e7affc3443023b0dfc3bddc201fcc3dc
   Type: Device
   Children:
   - Name: Select
@@ -40,7 +39,109 @@ Children:
   - Name: StationName
     Type: BaseDataVariableType
     DataType: String
-    Value: "Station parameter deatils (16B Clean Rinse) 345"
+    Value: " 16B Clean Rinse"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 120
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+- Name: Device2
+  Type: Device
+  Children:
+  - Name: Select
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Status
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Fault
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Base
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimeOn
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimerOff
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Symbol
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: DeviceGroup
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: " 16B Clean Rinse"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationNo
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 120
+  - Name: Position
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ""
+- Name: Device3
+  Type: Device
+  Children:
+  - Name: Select
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Status
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Fault
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Base
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimeOn
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: TimerOff
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 0
+  - Name: Symbol
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: DeviceGroup
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: StationName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
   - Name: Name
     Type: BaseDataVariableType
     DataType: String
@@ -51,5 +152,5 @@ Children:
     Value: 0
   - Name: Position
     Type: BaseDataVariableType
-    DataType: Int32
-    Value: 0
+    DataType: String
+    Value: ""

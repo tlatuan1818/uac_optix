@@ -19,12 +19,22 @@
     <TypeMappings>
         <TypeMapping>
             <TargetType>
-                <NodeId namespaceUri="UAC" guid="54e4e9cb4ac3e407f660c887c69b4b13" />
+                <NodeId namespaceUri="UAC" guid="95a982c7872262cc9f425a4a9e9743e1" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
             <TargetType>
                 <NodeId namespaceUri="UAC" guid="1117a9f6dea8ce6022a29cb3f1413b01" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="87b3d53cb09334afd387a89f4d8fd00c" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="12c0e49174f5dfc2031ce1b8f9683987" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
@@ -49,7 +59,7 @@
         </TypeMapping>
         <TypeMapping>
             <TargetType>
-                <NodeId namespaceUri="UAC" guid="2eed7f40027f0270796ce001c913bb7a" />
+                <NodeId namespaceUri="UAC" guid="33f72057a3d5dc5e67e928f37d074d3e" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
@@ -59,12 +69,67 @@
         </TypeMapping>
         <TypeMapping>
             <TargetType>
+                <NodeId namespaceUri="UAC" guid="de68e7e831c2f76de671ed3a7831972d" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
                 <NodeId namespaceUri="UAC" guid="bbb324c1c6bdad4a2389feb8764cfd1a" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
             <TargetType>
-                <NodeId namespaceUri="UAC" guid="a7677167b63d816efd844557477a52c9" />
+                <NodeId namespaceUri="UAC" guid="db018bbe96bb0c7fcf0dc9c537e8ce48" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="31060e9afdf78ae8c21f5ec505cca49f" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="9e690225f82e47b63d38730f7371454b" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="2eed7f40027f0270796ce001c913bb7a" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="47e303c85757f3983b9636a686b078df" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="914141b16a1b7883fbe7e6a5c980e5a2" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="9096a8e31baa6de52ed16ebf619fe639" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="fcaa659ab56ec4cd39950514f4f602e9" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="7e316292bbab341e9281ee4e0733eb1e" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="93af6c89b34d4c09da519bc1a57d56cc" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="ab066a165004e390b4e8193f714df9f6" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
@@ -89,12 +154,22 @@
         </TypeMapping>
         <TypeMapping>
             <TargetType>
-                <NodeId namespaceUri="UAC" guid="47e303c85757f3983b9636a686b078df" />
+                <NodeId namespaceUri="UAC" guid="c2c32d95d6fb64a46154a30064df52e5" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
             <TargetType>
-                <NodeId namespaceUri="UAC" guid="c2c32d95d6fb64a46154a30064df52e5" />
+                <NodeId namespaceUri="UAC" guid="5b5dccda803ad9f93d6ca21ec4369aaa" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="4b2fd62627947fc6d00933c2e3865818" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="UAC" guid="8f6413d4746dd9b509b31c9ca40a82f0" />
             </TargetType>
         </TypeMapping>
     </TypeMappings>
